@@ -31,6 +31,9 @@ weather_df = spark.read.csv(f"{DATA}/daily_weather.csv", header=True, inferSchem
 # Add noaa_ in front of every column except date
 weather_df = weather_df.toDF(*[c if c == "date" else f"noaa_{c}" for c in weather_df.columns])
 
+flights_df.show()
+weather_df.show()
+
 
 
 
